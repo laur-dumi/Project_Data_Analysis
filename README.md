@@ -37,4 +37,11 @@ The next step was to create the _%promovati_ worksheet, containing the following
 
 ![](images/atribuire_judet.png)
 
-  
+- NOTA FINALA ROMANA;
+- NOTA FINALA MATEMATICA;
+- MEDIA;
+- PROMOVATI RO, type Percentage, in which i calculated the percentage of students who passed the Romanian language exam for each county;
+- PROMOVATI MATE, type Percentage, in which i calculated the percentage of students who passed the Mathematics exam for each county;
+- PROMOVATI, type Percentage, which represents the percentage of students who passed both exams in each county;
+
+
