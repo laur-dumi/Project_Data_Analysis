@@ -28,5 +28,12 @@ The next step was to create the _%promovati_ worksheet, containing the following
 - COD UNIC CANDIDAT;
 - COD SIIIR;
 - SIIIR JUDET, type General, in which i extracted the first two characters of the COD SIIIR to identify the student's county of origin;
-  ![](images/caractere_siiir.png)
+  
+![](images/caractere_siiir.png)
+
+- COD JUDET, type Text, the two-digit SIIIR county code corresponding to each county;
+- JUDET, type Text, the name of each county in Romania;
+- PROVENIENTA, type General, in which by using the _XLOOKUP_ functian, i assigned each student to the corresponding county based on the SIIIR county code;
+
+
   
