@@ -48,5 +48,7 @@ The next step was to create the _%promovati_ worksheet, containing the following
 
 Based on the JUDET and PROMOVATI columns, i created a Map Chart that displays the pass rate for each county.
 
-![](images/promovabilitate.mp4)
+![](images/promovabilitate-ezgif.com-video-to-gif-converter.gif)
+
+
 
