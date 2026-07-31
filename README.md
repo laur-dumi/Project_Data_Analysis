@@ -1,7 +1,7 @@
 # Project Data Analysis
 Interactive Excel dashboard analyzing Romania's 2025 National Evaluation results. The project uses dynamic visualizations to explore regional performance, grade distributions, and contestation outcomes.
 
-The dataset used as the starting point for this project contains the following columns
+_export_ is the dataset used as the starting point for this project contains the following columns:
 - COD UNIC CANDIDAT, type General, unique identifier assigned to each candidate;
 - SEX, type General, candidate's gender (F or M) ;
 - MEDIU, type General, candidate's area of residence (URBAN or RURAL) ;
@@ -23,3 +23,9 @@ The dataset used as the starting point for this project contains the following c
 - NOTA FINALA MATEMATICA, type Number, final grade in the Mathematics exam;
 - MEDIA, type Number, final average grade obtined in the National Evaluation examination;
 - MEDIA V-VIII, type Number, average grade obtined during grades V - VIII.
+
+The next step was to create the _%promovati_ worksheet, containing the following column:
+- COD UNIC CANDIDAT;
+- COD SIIIR;
+- SIIIR JUDET, type General, in which i extracted the first two characters of the COD SIIIR to identify the student's county of origin;
+  
