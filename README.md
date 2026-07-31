@@ -35,5 +35,6 @@ The next step was to create the _%promovati_ worksheet, containing the following
 - JUDET, type Text, the name of each county in Romania;
 - PROVENIENTA, type General, in which by using the _XLOOKUP_ functian, i assigned each student to the corresponding county based on the SIIIR county code;
 
+![](images/atribuire_judet.png)
 
   
