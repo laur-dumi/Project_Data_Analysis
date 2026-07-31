@@ -28,4 +28,5 @@ The next step was to create the _%promovati_ worksheet, containing the following
 - COD UNIC CANDIDAT;
 - COD SIIIR;
 - SIIIR JUDET, type General, in which i extracted the first two characters of the COD SIIIR to identify the student's county of origin;
+  ![](images/caractere_siiir.png)
   
