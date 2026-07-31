@@ -44,4 +44,8 @@ The next step was to create the _%promovati_ worksheet, containing the following
 - PROMOVATI MATE, type Percentage, in which i calculated the percentage of students who passed the Mathematics exam for each county;
 - PROMOVATI, type Percentage, which represents the percentage of students who passed both exams in each county;
 
+![](images/promovati_judet.png)
+
+Based on the JUDET and PROMOVATI columns, i created a Map Chart that displays the pass rate for each county.
+
 
