@@ -85,7 +85,7 @@ The _statistica_ worksheet contains descriptive statistics calculated for each R
 - Standard deviation;
 - Total number of students.
 
-
+![](images/statistica1.png)
 
 In addition, the students were grouped into grade intervals to analyze the distribution of final results:
 - below 5.00;
@@ -93,4 +93,9 @@ In addition, the students were grouped into grade intervals to analyze the distr
 - between 7.00 and 8.99;
 - between 9.00 and 10.00 (inclusive)
 
+![](images/statistica2.png)
+
 These statistics provide a comprehensive overview of student performance across counties and facilitate comparisons of grade distribution and overall achievement levels.
+
+I created a Data Visualisation drop-down list that allows the user to select a county. Based on the selected county, the dashboard automatically updates and displays the corresponding statistics, including a _Box & Whisker chart_ and a _Histogram chart_ showing the distribution of students'final grades.
+
