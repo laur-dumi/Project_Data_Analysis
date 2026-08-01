@@ -100,3 +100,8 @@ These statistics provide a comprehensive overview of student performance across 
 I created a Data Visualisation drop-down list that allows the user to select a county. Based on the selected county, the dashboard automatically updates and displays the corresponding statistics, including a _Box & Whisker chart_ and a _Histogram chart_ showing the distribution of students'final grades.
 
 ![](images/statistica_grafic_ezgif.com-video-to-gif-converter.gif)
+
+The _absenteism_ worksheet contains statisitcs for each county regarding the percentage of students who were absent from the national examination. It also includes a breakdown of absent students by area of residence (urban and rural) and by gender (male and female).
+
+
+A _doughnut chart_ was created to visualize these distributions, and it is linked to the same Data Validation drop-down list described earlier, allowing the chart to update dynamically based on the selected county.
