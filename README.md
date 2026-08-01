@@ -57,4 +57,6 @@ The next step in my project was to create a new worksheet named _situatie_regiun
 Then i assigned each student to the region in which their county of residence is located. 
 Later, based on the region, i created a slicer for the PivotTable. The corresponding PivotChart shows how many students submitted appeals and how their grades changed after the appeals process, allowing the results to be filtered by region.
 
+![](images/regiune.png)
+
 
