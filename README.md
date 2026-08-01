@@ -99,4 +99,4 @@ These statistics provide a comprehensive overview of student performance across 
 
 I created a Data Visualisation drop-down list that allows the user to select a county. Based on the selected county, the dashboard automatically updates and displays the corresponding statistics, including a _Box & Whisker chart_ and a _Histogram chart_ showing the distribution of students'final grades.
 
-![](images/statistica_grafic_ezgif.com-video-to-gif-converter(1).gif)
+![](images/statistica_grafic_ezgif.com-video-to-gif-converter.gif)
