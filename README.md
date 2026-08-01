@@ -1,7 +1,7 @@
 # Project Data Analysis
 Interactive Excel dashboard analyzing Romania's 2025 National Evaluation results. The project uses dynamic visualizations to explore regional performance, grade distributions, and contestation outcomes.
 
-_export_ is the dataset used as the starting point for this project contains the following columns:
+_export_, the dataset used as the starting point for this project, contains the following columns:
 - COD UNIC CANDIDAT, type General, unique identifier assigned to each candidate;
 - SEX, type General, candidate's gender (F or M) ;
 - MEDIU, type General, candidate's area of residence (URBAN or RURAL) ;
@@ -76,3 +76,21 @@ and the difference between the final exam grade and the average grade achived du
 ![](images/comparatie_medie.png)
 
 ![](images/comparatie_medie_grafic.png)
+
+The _statistica_ worksheet contains descriptive statistics calculated for each Romanian county. For every county, the following indicators were computed:
+- Average (Mean) ;
+- Median;
+- First Quartile (Q1) ;
+- Third Quartile (Q3) ;
+- Standard deviation;
+- Total number of students.
+
+
+
+In addition, the students were grouped into grade intervals to analyze the distribution of final results:
+- below 5.00;
+- between 5.00 and 6.99;
+- between 7.00 and 8.99;
+- between 9.00 and 10.00 (inclusive)
+
+These statistics provide a comprehensive overview of student performance across counties and facilitate comparisons of grade distribution and overall achievement levels.
