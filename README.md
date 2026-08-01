@@ -50,5 +50,6 @@ Based on the JUDET and PROMOVATI columns, i created a Map Chart that displays th
 
 ![](images/promovabilitate-ezgif.com-video-to-gif-converter.gif)
 
+The next step in my project was to create a new worksheet named _situatie_regiuni_, where i calculated, in the DIFERENTA_PUNCTAJ column, the difference between each student's average grade before and after the appeals process. Based on this differece, i assigned a label to each student in the  DIF column.
 
 
