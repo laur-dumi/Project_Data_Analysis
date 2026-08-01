@@ -55,10 +55,16 @@ The next step in my project was to create a new worksheet named _situatie_regiun
 ![](images/eticheta.png)
 
 Then i assigned each student to the region in which their county of residence is located. 
-Later, based on the region, i created a slicer for the PivotTable. The corresponding PivotChart shows how many students submitted appeals and how their grades changed after the appeals process, allowing the results to be filtered by region.
 
 ![](images/regiune.png)
 
+Later, based on the region, i created a slicer for the PivotTable. The corresponding PivotChart shows how many students submitted appeals and how their grades changed after the appeals process, allowing the results to be filtered by region.
+
+
 ![](images/ezgif.com-video-to-gif-converter.gif)
 
+Additionally, i created two more PivotTables with their corresponding PivotCharts. These visualisations show the evolution of the average grade after appeals
+
+
+and the difference between the final exam grade and the average grade achived during Grades V - VIII, also allowing the results to be filtered by region.
 
