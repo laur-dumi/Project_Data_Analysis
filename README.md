@@ -103,5 +103,8 @@ I created a Data Visualisation drop-down list that allows the user to select a c
 
 The _absenteism_ worksheet contains statisitcs for each county regarding the percentage of students who were absent from the national examination. It also includes a breakdown of absent students by area of residence (urban and rural) and by gender (male and female).
 
+![](images/absenti.png)
 
 A _doughnut chart_ was created to visualize these distributions, and it is linked to the same Data Validation drop-down list described earlier, allowing the chart to update dynamically based on the selected county.
+
+![](images/absenti_ezgif.com-video-to-gif-converter.gif)
