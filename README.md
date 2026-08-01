@@ -52,4 +52,9 @@ Based on the JUDET and PROMOVATI columns, i created a Map Chart that displays th
 
 The next step in my project was to create a new worksheet named _situatie_regiuni_, where i calculated, in the DIFERENTA_PUNCTAJ column, the difference between each student's average grade before and after the appeals process. Based on this differece, i assigned a label to each student in the  DIF column.
 
+![](images/eticheta.png)
+
+Then i assigned each student to the region in which their county of residence is located. 
+Later, based on the region, i created a slicer for the PivotTable. The corresponding PivotChart shows how many students submitted appeals and how their grades changed after the appeals process, allowing the results to be filtered by region.
+
 
