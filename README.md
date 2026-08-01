@@ -59,4 +59,6 @@ Later, based on the region, i created a slicer for the PivotTable. The correspon
 
 ![](images/regiune.png)
 
+![](images/ezgif.com-video-to-gif-converter.gif)
+
 
