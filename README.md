@@ -60,11 +60,19 @@ Then i assigned each student to the region in which their county of residence is
 
 Later, based on the region, i created a slicer for the PivotTable. The corresponding PivotChart shows how many students submitted appeals and how their grades changed after the appeals process, allowing the results to be filtered by region.
 
+![](images/dif_punctaj.png)
 
 ![](images/ezgif.com-video-to-gif-converter.gif)
 
 Additionally, i created two more PivotTables with their corresponding PivotCharts. These visualisations show the evolution of the average grade after appeals
 
+![](images/inainte_dupa.png)
+
+![](images/inainte_dupa_grafic.png)
+
 
 and the difference between the final exam grade and the average grade achived during Grades V - VIII, also allowing the results to be filtered by region.
 
+![](images/comparatie_medie.png)
+
+![](images/comparatie_medie_grafic.png)
