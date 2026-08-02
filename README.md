@@ -15,11 +15,13 @@
 ### 1st Dashboard
   Select a county from the drop-down menu.
 
+  ![](images/dash1_ezgif.com-video-to-gif-converter.gif)
+
 
 ### 2nd Dashboard
   Select a region using the slicer.
 
-  
+  ![](images/dash2_ezgif.com-video-to-gif-converter.gif)
 
 ## How i build it?
 
