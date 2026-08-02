@@ -23,6 +23,16 @@
 
   ![](images/dash2_ezgif.com-video-to-gif-converter.gif)
 
+## Why i build this project?
+
+This is my first data analysis project, created to combiine my passion for education with my interest in data analytics. As a mathematics teacher with six years of experience, i wanted to explore how educational data can be used to answer important questions rather then simply present statistics.
+
+The project focuses on these questions:
+- Is grading truly objective?
+- Does an unfavorable social environment contribute to school disengagement?
+- Are school grades consistent with national exam performance?
+- Are there significant regional disparities in academic achievement?
+
 ## How i build it?
 
 _export_, the dataset used as the starting point for this project, contains the following columns:
