@@ -1,6 +1,6 @@
-#📊 Project Data Analysis
+# 📊 Project Data Analysis
 
-##🎯 Introduction
+## 🎯 Introduction
 
   This project represents an interactive Excel dashboard analyzing Romania's 2025 National Evaluation results, it uses dynamic visualizations to explore regional performance, grade distributions, and contestation outcomes.
   This project showcases my data analysis and Excel skills using a dataset containing over 150.000 records from the Romanian National Evaluation 2025. Throughout the project, i calculated descriptive statistical measures (mean, median, quartiles, standard ceviaton) to analyze students performance and presented the results through a variety of interactive charts.
@@ -11,14 +11,14 @@
   - Connect multiple PivotTables to the same slicer for synchronized filtering;
   - Design interactive dashboards.
 
-##🚀 How does it work?
-###📈 1st Dashboard
+## 🚀 How does it work?
+### 📈 1st Dashboard
   Select a county from the drop-down menu.
 
   ![](images/dash1_ezgif.com-video-to-gif-converter.gif)
 
 
-###📈 2nd Dashboard
+### 📈 2nd Dashboard
   Select a region using the slicer.
 
   ![](images/dash2_ezgif.com-video-to-gif-converter.gif)
@@ -33,7 +33,7 @@ The project focuses on these questions:
 - Are school grades consistent with national exam performance?
 - Are there significant regional disparities in academic achievement?
 
-##📄 How i build it?
+## 📄 How i build it?
 
 _export_, the dataset used as the starting point for this project, contains the following columns:
 - COD UNIC CANDIDAT, type General, unique identifier assigned to each candidate;
