@@ -99,7 +99,10 @@ FROM (
   ![](images/raspuns2_2ezgif.com-video-to-gif-converter.gif)
   
 - **Are school grades consistent with national exam performance?**
+  
   _Answer:_ No. The analyzed data shows that the average final grade during the school years is higher than the average grade obtained in the National Evaluation exam.
+
+
 
   The following section highlights the 10 largest differences identified between the two averages.
   
