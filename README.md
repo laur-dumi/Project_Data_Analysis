@@ -4,12 +4,14 @@
 
   This project represents an interactive Excel dashboard analyzing Romania's 2025 National Evaluation results, it uses dynamic visualizations to explore regional performance, grade distributions, and contestation outcomes.
   This project showcases my data analysis and Excel skills using a dataset containing over 150.000 records from the Romanian National Evaluation 2025. Throughout the project, i calculated descriptive statistical measures (mean, median, quartiles, standard ceviaton) to analyze students performance and presented the results through a variety of interactive charts.
+    As a complementary approach, i also used SQL to calculate and analyze the same key indicators, validating the results obtained in Excel.
 
   The project also demonstrates my ability to:
   - Create dynamic data validation drop-down list;
   - Build and customize PivotTables and PivotCharts;
   - Connect multiple PivotTables to the same slicer for synchronized filtering;
-  - Design interactive dashboards.
+  - Design interactive dashboards;
+  - Use SQL.
 
 ## 🚀 How does it work?
 ### 📈 1st Dashboard
@@ -28,10 +30,23 @@
 This is my first data analysis project, created to combiine my passion for education with my interest in data analytics. As a mathematics teacher with six years of experience, i wanted to explore how educational data can be used to answer important questions rather then simply present statistics.
 
 The project focuses on these questions:
-- Is grading truly objective?
-- Does an unfavorable social environment contribute to school disengagement?
-- Are school grades consistent with national exam performance?
-- Are there significant regional disparities in academic achievement?
+- **Is grading truly objective?**
+  _Answer:_ No. x% of the total number of exam participants submitted an appeal, and their final average changed for y% of them.
+  
+  This result can also be observed in the following chart:
+  
+- **Does an unfavorable social environment contribute to school disengagement?**
+  _Answer:_ Yes. Based on the recorded data, in each county, the highest number of absent students comes from rural areas.
+
+  This result is also reflected in the following chart and statistics.
+  
+- **Are school grades consistent with national exam performance?**
+  _Answer:_ No. The analyzed data shows that the average final grade during the school years is higher than the average grade obtained in the National Evaluation exam.
+
+  The following section highlights the 10 largest differences identified between the two averages.
+  
+- **Are there significant regional disparities in academic achievement?**
+  _Answer:_ Yes. The grade distribution across counties chart, as well as the pass rate for each county chart, shows significant difference in academic performance between regions.
 
 ## 📄 How i build it?
 
