@@ -65,9 +65,38 @@ The project focuses on these questions:
  ![](images/raspuns1_2ezgif.com-video-to-gif-converter.gif) 
   
 - **Does an unfavorable social environment contribute to school disengagement?**
+  
   _Answer:_ Yes. Based on the recorded data, in each county, the highest number of absent students comes from rural areas.
 
+```sql
+  SELECT
+    numar_absenti *100/numar_elevi AS procent_absenti,
+    absenti_rural *100/numar_absenti AS procent_rural
+FROM (
+    SELECT
+        COUNT(rezultate_en.cod_unic_candidat) FILTER ( WHERE
+            rezultate_en.STATUS_ROMANA = 'ABSENT' OR
+            rezultate_en.STATUS_MATEMATICA = 'ABSENT'
+        ) AS numar_absenti,
+        COUNT(rezultate_en.cod_unic_candidat) AS numar_elevi,
+        COUNT(rezultate_en.cod_unic_candidat) FILTER ( WHERE
+            rezultate_en.MEDIU = 'RURAL' AND
+            (rezultate_en.STATUS_ROMANA = 'ABSENT' OR
+            rezultate_en.STATUS_MATEMATICA = 'ABSENT')
+        ) AS absenti_rural
+    FROM
+        rezultate_en
+        LEFT JOIN
+        counties ON
+        rezultate_en.cod_judet = counties.county_code
+    );
+```
+
+![](images/raspuns2_1.png)
+
   This result is also reflected in the following chart and statistics.
+
+  ![](images/raspuns2_2ezgif.com-video-to-gif-converter.gif)
   
 - **Are school grades consistent with national exam performance?**
   _Answer:_ No. The analyzed data shows that the average final grade during the school years is higher than the average grade obtained in the National Evaluation exam.
