@@ -137,6 +137,43 @@ LIMIT 10;
   
   _Answer:_ Yes. The grade distribution across counties chart, as well as the pass rate for each county chart, shows significant difference in academic performance between regions.
 
+  ![](images/raspuns4_1.gif)
+
+  ![](images/raspuns4_2.gif)
+
+  Top 10 Counties by pass rate
+
+  ```sql
+    SELECT
+    county_name AS judet,
+    ROUND(nr_elevi_promovati*100.0/nr_elevi_inscrisi,2) AS procent_promovabilitate
+  FROM (
+    SELECT 
+        counties.county_name,
+        COUNT(rezultate_en.cod_unic_candidat) AS nr_elevi_inscrisi,
+        COUNT(rezultate_en.cod_unic_candidat) FILTER(
+            WHERE
+            rezultate_en.STATUS_ROMANA = 'PREZENT' AND
+            rezultate_en.STATUS_MATEMATICA = 'PREZENT')
+            AS nr_elevi_prezenti,
+        COUNT(rezultate_en.cod_unic_candidat) FILTER(
+            WHERE
+            rezultate_en.NOTA_FINALA_ROMANA >=5 AND
+            rezultate_en.NOTA_FINALA_MATEMATICA >=5)
+            AS nr_elevi_promovati
+    FROM
+        rezultate_en
+        LEFT JOIN counties ON
+            rezultate_en.cod_judet = counties.county_code
+    GROUP BY 
+        counties.county_name
+  )
+  ORDER BY procent_promovabilitate DESC
+  LIMIT 10;
+  ```
+
+![](images/raspuns4_3.png)
+
 ## 📄 How i build it?
 
 _export_, the dataset used as the starting point for this project, contains the following columns:
