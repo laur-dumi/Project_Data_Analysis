@@ -102,11 +102,39 @@ FROM (
   
   _Answer:_ No. The analyzed data shows that the average final grade during the school years is higher than the average grade obtained in the National Evaluation exam.
 
-
+![](images/raspuns3_1ezgif.com-video-to-gif-converter.gif)
 
   The following section highlights the 10 largest differences identified between the two averages.
+
+  ```sql
+    SELECT
+    elev,
+    judet,
+    medie_gimnaziu - medie_examen AS diferenta_medie
+FROM (
+    SELECT
+        counties.county_name AS judet,
+        rezultate_en.cod_unic_candidat AS elev,
+        rezultate_en.media AS medie_examen,
+        rezultate_en.MEDIA_GIMNAZIU AS medie_gimnaziu
+    FROM
+        rezultate_en 
+        LEFT JOIN
+        counties
+        ON
+        rezultate_en.cod_judet = counties.county_code
+    WHERE
+        rezultate_en.media IS NOT NULL
+    
+)
+ORDER BY diferenta_medie DESC
+LIMIT 10;
+  ```
+
+![](images/raspuns3_2.png)
   
 - **Are there significant regional disparities in academic achievement?**
+  
   _Answer:_ Yes. The grade distribution across counties chart, as well as the pass rate for each county chart, shows significant difference in academic performance between regions.
 
 ## 📄 How i build it?
