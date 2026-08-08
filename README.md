@@ -57,10 +57,12 @@ The project focuses on these questions:
         rezultate_en.cod_judet = counties.county_code
     );
   ```
-  
+
+![](images/raspuns1_1.png)
+
   This result can also be observed in the following chart:
 
-  
+ ![](images/raspuns1_2ezgif.com-video-to-gif-converter.gif) 
   
 - **Does an unfavorable social environment contribute to school disengagement?**
   _Answer:_ Yes. Based on the recorded data, in each county, the highest number of absent students comes from rural areas.
