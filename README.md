@@ -31,9 +31,36 @@ This is my first data analysis project, created to combiine my passion for educa
 
 The project focuses on these questions:
 - **Is grading truly objective?**
-  _Answer:_ No. x% of the total number of exam participants submitted an appeal, and their final average changed for y% of them.
+
+   _Answer:_ No. 9% of the total number of exam participants submitted an appeal, and their final average changed for 92% of them.
+  
+  ```sql
+  SELECT
+    numar_contestatii *100/numar_elevi AS procent_contestatii,
+    numar_modificari *100/numar_contestatii AS procent_modificari
+  FROM (
+    SELECT
+        COUNT(rezultate_en.cod_unic_candidat) FILTER ( WHERE
+            rezultate_en.contestatie_romana = 'DA' OR
+            rezultate_en.contestatie_matematica = 'DA'
+        ) AS numar_contestatii,
+        COUNT(rezultate_en.cod_unic_candidat) AS numar_elevi,
+        COUNT(rezultate_en.cod_unic_candidat) FILTER ( WHERE
+            rezultate_en.nota_romana <> rezultate_en.nota_finala_romana
+            OR
+            rezultate_en.nota_matematica <> rezultate_en.NOTA_FINALA_MATEMATICA
+        ) AS numar_modificari
+    FROM
+        rezultate_en
+        LEFT JOIN
+        counties ON
+        rezultate_en.cod_judet = counties.county_code
+    );
+  ```
   
   This result can also be observed in the following chart:
+
+  
   
 - **Does an unfavorable social environment contribute to school disengagement?**
   _Answer:_ Yes. Based on the recorded data, in each county, the highest number of absent students comes from rural areas.
