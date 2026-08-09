@@ -616,7 +616,7 @@ Foaia _export_ de la care am pornit proiectul conține următoarele coloane
 
 diferența punctajului dintre nota înainte de contestație și după contestație,
 
-![](diferenta_punctaj.png)
+![](images/diferenta_punctaj.png)
 
 am adăugat fiecărui elev câte o etichetă privind diferența calculată anterior astfel:
 - dacă nu au contestat, eticheta „nu_con”;
@@ -626,11 +626,11 @@ am adăugat fiecărui elev câte o etichetă privind diferența calculată anter
 - dacă diferența calculată era >=1 și <2, eticheta „<2”;
 - dacă diferența calculată era de peste 2 puncte, eticheta „>2”,
 
-![](eticheta_diferenta.png)
+![](images/eticheta_diferenta.png)
 
 am adăugat fiecărui elev regiunea de unde acesta este.
 
-![](atribuire_regiune.png)
+![](images/atribuire_regiune.png)
 
 În foaia _%promovati_ am extras primele două caractere din codul SIIIR,
 
