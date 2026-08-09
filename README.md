@@ -594,9 +594,11 @@ FROM (
 
 În foaia _situatie_regiuni_ am calculat media înainte de contestație,
 
+![](images/medie_inainte.png)
 
 diferența punctajului dintre nota înainte de contestație și după contestație,
 
+![](diferenta_punctaj.png)
 
 am adăugat fiecărui elev câte o etichetă privind diferența calculată anterior astfel:
 - dacă nu au contestat, eticheta „nu_con”;
@@ -606,5 +608,33 @@ am adăugat fiecărui elev câte o etichetă privind diferența calculată anter
 - dacă diferența calculată era >=1 și <2, eticheta „<2”;
 - dacă diferența calculată era de peste 2 puncte, eticheta „>2”,
 
+![](eticheta_diferenta.png)
 
 am adăugat fiecărui elev regiunea de unde acesta este.
+
+![](atribuire_regiune.png)
+
+În foaia _%promovati_ am extras primele două caractere din codul SIIIR,
+
+
+
+am atribuit fiecărui elev județul de proveniență
+
+
+am calculat procentul de promovabilitate pentru fiecare județ, atât la matematica, la română cât și pentru media finală.
+
+
+
+În foaia _statistica_ am calulat pentru fiecare județ
+- numărul elevilor, **NR ELEVI**;
+- cea mai mică medie, **MINIM**;
+- prima quartilă, **Q1**;
+- mediana, **MEDIANA**;
+- media, **MEDIA**;
+- a treia quartilă, **Q3**;
+- cea mai mare medie, **MAXIM**;
+- deviația standard, **DEVIATIA STANDARD**;
+- numărul mediilor mai mici decât 5, **<5**;
+- numărul mediilor între 5 și 7, **5<=x<7**;
+- numărul mediilor între 7 și 9, **7<=x<9**;
+- numărul mediilor între 9 și 10 inclusiv, **9<=x<=10**.
