@@ -645,6 +645,7 @@ am calculat procentul de promovabilitate pentru fiecare județ, atât la matemat
 
 În foaia _absenteism_ am calculat procentul de absenți pentru fiecare județ, procentul de absenți care provin din mediul rural și procentul de absenți din mediul rural de sex masculin.
 
+![](images/absenti_final.png)
 
 Am creat următoarele Pivot Tables ale căror Pivot Charts respective le-am folosit în al doilea Dashboard.
 
