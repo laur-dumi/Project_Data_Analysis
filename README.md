@@ -1,6 +1,15 @@
-# 📊 Proiect Data Analysis
+#  Proiect Data Analysis
 
-## 🎯 Introducere
+-[Introducere](#introducere)
+-[Cum funcționează?](#cum-funcționează-?)
+  -[Primul Dashboard](#primul-dashboard)
+  -[Al doilea Dashboard](#al-doilea-dashboard)
+-[De ce am realizat acest proiect?](#de-ce-am-realizat-acest-proiect-?)
+-[Codul SQL](#codul-sql)
+  -[Creare baza de date si tabele](#creare-baza-de-date-si-tabele)
+  -[Întrebări la care am răspuns](#întrebări-la-care-am-răspuns)
+  
+##  Introducere
 
   Acest proiect reprezintă un dashboard interactiv în Excel, care analizează rezultatele Evaluării Naționale din România din 2025. Acesta utilizează vizualizări dinamice pentru a explora performanța la nivel regional, distribuția notelor și rezultatele contestațiilor.
 
@@ -18,19 +27,19 @@ Ca abordare complementară, am utilizat și SQL pentru a calcula și analiza ace
 - Utiliza SQL.
 
 
-## 🚀 Cum functionează?
-### 📈 Primul Dashboard
+##  Cum functionează?
+###  Primul Dashboard
   Selectează un județ din meniul drop-down.
 
   ![](images/dash1_ezgif.com-video-to-gif-converter.gif)
 
 
-### 📈 Al doilea Dashboard
+###  Al doilea Dashboard
   Selectează o regiune din slicer.
 
   ![](images/dash2_ezgif.com-video-to-gif-converter.gif)
 
-## 💡 De ce am realizat acest proiect?
+##  De ce am realizat acest proiect?
 
 Acesta este primul meu proiect de analiză a datelor și reprezintă o combinație între pasiunea mea pentru educație și interesul meu pentru domeniul data analytics. Având șase ani de experiență ca profesor de matematică, mi-am dorit să explorez modul în care datele educaționale pot fi analizate pentru a identifica tendințe, compara rezultate și răspunde unor întrebări relevante, dincolo de simpla prezentare a unor statistici.
 
