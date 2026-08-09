@@ -592,6 +592,24 @@ FROM (
 
 ## Excel
 
+Foaia _export_ de la care am pornit proiectul conține următoarele coloane
+- COD UNIC CANDIDAT, tip TEXT;
+- SEX, tip TEXT (M/F);
+- MEDIU, tip TEXT (URBAN/RURAL;
+- COD SIIIR , tip TEXT;
+- STATUS ROMANA, tip TEXT (ABSENT/PREZENT);
+- STATUS MATEMATICA, tip TEXT (ABSENT/PREZENT);
+- NOTA ROMANA, tip NUMBER;
+- NOTA MATEMATICA, tip NUMBER;
+- CONTESTATIE ROMANA, tip TEXT (DA/NU);
+- NOTA CONTESTATIE ROMANA, tip NUMBER;
+- CONTESTATIE MATEMATICA, tip TEXT (DA/NU);
+- NOTA CONTESTATIE MATEMATICA, tip NUMBER;
+- NOTA FINALA ROMANA, tip NUMBER;
+- NOTA FINALA MATEMATICA, tip NUMBER;
+- MEDIA, tip NUMBER;
+- MEDIA V-VIII, tip NUMBER.
+
 În foaia _situatie_regiuni_ am calculat media înainte de contestație,
 
 ![](images/medie_inainte.png)
