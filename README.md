@@ -7,7 +7,7 @@
   - [Al doilea Dashboard](#al-doilea-dashboard)
 - [De ce am realizat acest proiect?](#de-ce-am-realizat-acest-proiect)
 - [Codul SQL](#codul-sql)
-  - [Creare baza de date si tabele](#creare-baza-de-date-si-tabele)
+  - [Creare baza de date si tabele](#creare-baza-de-date-și-tabele)
   - [Întrebări la care am răspuns](#întrebări-la-care-am-răspuns)
   
 ##  Introducere
