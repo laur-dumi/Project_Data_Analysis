@@ -28,7 +28,7 @@ Ca abordare complementară, am utilizat și SQL pentru a calcula și analiza ace
 - Utiliza SQL.
 
 
-##  Cum functionează?
+##  Cum funcționează?
 ###  Primul Dashboard
   Selectează un județ din meniul drop-down.
 
