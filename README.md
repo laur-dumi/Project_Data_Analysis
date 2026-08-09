@@ -1,38 +1,44 @@
-# 📊 Project Data Analysis
+# 📊 Proiect Data Analysis
 
-## 🎯 Introduction
+## 🎯 Introducere
 
-  This project represents an interactive Excel dashboard analyzing Romania's 2025 National Evaluation results, it uses dynamic visualizations to explore regional performance, grade distributions, and contestation outcomes.
-  This project showcases my data analysis and Excel skills using a dataset containing over 150.000 records from the Romanian National Evaluation 2025. Throughout the project, i calculated descriptive statistical measures (mean, median, quartiles, standard ceviaton) to analyze students performance and presented the results through a variety of interactive charts.
-    As a complementary approach, i also used SQL to calculate and analyze the same key indicators, validating the results obtained in Excel.
+  Acest proiect reprezintă un dashboard interactiv în Excel, care analizează rezultatele Evaluării Naționale din România din 2025. Acesta utilizează vizualizări dinamice pentru a explora performanța la nivel regional, distribuția notelor și rezultatele contestațiilor.
 
-  The project also demonstrates my ability to:
-  - Create dynamic data validation drop-down list;
-  - Build and customize PivotTables and PivotCharts;
-  - Connect multiple PivotTables to the same slicer for synchronized filtering;
-  - Design interactive dashboards;
-  - Use SQL.
+Proiectul evidențiază abilitățile mele de analiză a datelor și de utilizare a Excelului, folosind un set de date care conține peste 150.000 de înregistrări din cadrul Evaluării Naționale 2025. Pe parcursul proiectului, am calculat indicatori statistici descriptivi (media, mediana, quartilele și abaterea standard) pentru a analiza performanța elevilor și am prezentat rezultatele printr-o varietate de grafice interactive.
 
-## 🚀 How does it work?
-### 📈 1st Dashboard
-  Select a county from the drop-down menu.
+Ca abordare complementară, am utilizat și SQL pentru a calcula și analiza aceiași indicatori principali, validând astfel rezultatele obținute în Excel.
+
+
+  Proiectul demonstrează, de asemenea, capacitatea mea de a:
+
+- Crea liste derulante dinamice folosind validarea datelor;
+- Construi și personaliza tabele Pivot și grafice Pivot;
+- Conecta mai multe tabele Pivot la același slicer pentru filtrare sincronizată;
+- Proiecta dashboard-uri interactive;
+- Utiliza SQL.
+
+
+## 🚀 Cum functionează?
+### 📈 Primul Dashboard
+  Selectează un județ din meniul drop-down.
 
   ![](images/dash1_ezgif.com-video-to-gif-converter.gif)
 
 
-### 📈 2nd Dashboard
-  Select a region using the slicer.
+### 📈 Al doilea Dashboard
+  Selectează o regiune din slicer.
 
   ![](images/dash2_ezgif.com-video-to-gif-converter.gif)
 
-## 💡 Why i build this project?
+## 💡 De ce am realizat acest proiect?
 
-This is my first data analysis project, created to combiine my passion for education with my interest in data analytics. As a mathematics teacher with six years of experience, i wanted to explore how educational data can be used to answer important questions rather then simply present statistics.
+Acesta este primul meu proiect de analiză a datelor și reprezintă o combinație între pasiunea mea pentru educație și interesul meu pentru domeniul data analytics. Având șase ani de experiență ca profesor de matematică, mi-am dorit să explorez modul în care datele educaționale pot fi analizate pentru a identifica tendințe, compara rezultate și răspunde unor întrebări relevante, dincolo de simpla prezentare a unor statistici.
 
-The project focuses on these questions:
-- **Is grading truly objective?**
 
-   _Answer:_ No. 9% of the total number of exam participants submitted an appeal, and their final average changed for 92% of them.
+Proiectul se focusează pe următoarele întrebări:
+- **Este evaluarea cu adevărat obiectivă?**
+
+   _Răspuns:_ Nu. 9% dintre participanții la examen au depus contestație, iar în 92% dintre cazuri media finală s-a modificat
   
   ```sql
   SELECT
@@ -60,13 +66,13 @@ The project focuses on these questions:
 
 ![](images/raspuns1_1.png)
 
-  This result can also be observed in the following chart:
+ Acest rezultat poate fi observat și în graficul de mai jos:
 
  ![](images/raspuns1_2ezgif.com-video-to-gif-converter.gif) 
   
-- **Does an unfavorable social environment contribute to school disengagement?**
+- **Poate un mediu social nefavorabil să contribuie la absenteismul și abandonul școlar?**
   
-  _Answer:_ Yes. Based on the recorded data, in each county, the highest number of absent students comes from rural areas.
+  _Răspuns:_ Da. Pe baza datelor înregistrate, în fiecare județ, cel mai mare număr de elevi absenți provine din mediul rural.
 
 ```sql
   SELECT
@@ -94,17 +100,17 @@ FROM (
 
 ![](images/raspuns2_1.png)
 
-  This result is also reflected in the following chart and statistics.
-
+  Acest rezultat este reflectat și în graficul și statisticile de mai jos.
+  
   ![](images/raspuns2_2ezgif.com-video-to-gif-converter.gif)
   
-- **Are school grades consistent with national exam performance?**
+- **Sunt notele școlare în concordanță cu rezultatele obținute la Evaluarea Națională?**
   
-  _Answer:_ No. The analyzed data shows that the average final grade during the school years is higher than the average grade obtained in the National Evaluation exam.
+  _Răspuns:_ Nu. Datele analizate arată că media finală obținută pe parcursul anilor de școală este mai mare decât media obținută la examenul de Evaluare Națională.
 
 ![](images/raspuns3_1ezgif.com-video-to-gif-converter.gif)
 
-  The following section highlights the 10 largest differences identified between the two averages.
+ Următoarea secțiune evidențiază cele mai mari 10 diferențe identificate între cele două medii.
 
   ```sql
     SELECT
@@ -133,15 +139,15 @@ LIMIT 10;
 
 ![](images/raspuns3_2.png)
   
-- **Are there significant regional disparities in academic achievement?**
+- **Există diferențe regionale semnificative în ceea ce privește rezultatele la evaluarea națională?**
   
-  _Answer:_ Yes. The grade distribution across counties chart, as well as the pass rate for each county chart, shows significant difference in academic performance between regions.
+  _Răspuns:_ Da. Graficul privind distribuția notelor pe județe, precum și graficul privind rata de promovabilitate pentru fiecare județ, evidențiază diferențe semnificative în ceea ce privește performanța școlară între județe.
 
   ![](images/raspuns4_1.gif)
 
   ![](images/raspuns4_2.gif)
 
-  Top 10 Counties by pass rate
+  Top 10 județe privind rata de promovabilitate
 
   ```sql
     SELECT
@@ -174,107 +180,5 @@ LIMIT 10;
 
 ![](images/raspuns4_3.png)
 
-## 📄 How i build it?
-
-_export_, the dataset used as the starting point for this project, contains the following columns:
-- COD UNIC CANDIDAT, type General, unique identifier assigned to each candidate;
-- SEX, type General, candidate's gender (F or M) ;
-- MEDIU, type General, candidate's area of residence (URBAN or RURAL) ;
-- COD SIIIR, type General, unique code identifying the educational institution attended by the candidate;
-- STATUS ROMANA, type General, indicates whether the candidate was present or absent at the Romanian language exam (PREZENT or ABSENT) ;
-- STATUS MATEMATICA, type General, candidate's attendace status at the Mathematics exam (PREZENT or ABSENT) ;
-- NOTA ROMANA, type Number, grade obtained in the Romanian language exam;
-- NOTA MATEMATICA, type Number, grade obtained in the Mathematics exam;
-- CONTESTATIE ROMANA, type General, indicates whether the candidate submited an appeal for the Romanian language exam (DA or NU) ;
-- NOTA CONTESTATIE ROMANA, type Number, final grade obtained in the Romanian language exam after appeals;
-- CONTESTATIE MATEMATICA, type General, indicates whether the candidate submited an appeal for the Mathematics exam (DA or NU) ;
-- NOTA CONTESTATIE MATEMATICA, type Number, final grade obtined in the Mathematics exam after appeal;
-- NOTA FINALA ROMANA, type Number, final grade in the Romanian language exam;
-- NOTA FINALA MATEMATICA, type Number, final grade in the Mathematics exam;
-- MEDIA, type Number, final average grade obtined in the National Evaluation examination;
-- MEDIA V-VIII, type Number, average grade obtined during grades V - VIII.
-
-The next step was to create the _%promovati_ worksheet, containing the following column:
-- COD UNIC CANDIDAT;
-- COD SIIIR;
-- SIIIR JUDET, type General, in which i extracted the first two characters of the COD SIIIR to identify the student's county of origin;
-  
-![](images/caractere_siiir.png)
-
-- COD JUDET, type Text, the two-digit SIIIR county code corresponding to each county;
-- JUDET, type Text, the name of each county in Romania;
-- PROVENIENTA, type General, in which by using the _XLOOKUP_ functian, i assigned each student to the corresponding county based on the SIIIR county code;
-
-![](images/atribuire_judet.png)
-
-- NOTA FINALA ROMANA;
-- NOTA FINALA MATEMATICA;
-- MEDIA;
-- PROMOVATI RO, type Percentage, in which i calculated the percentage of students who passed the Romanian language exam for each county;
-- PROMOVATI MATE, type Percentage, in which i calculated the percentage of students who passed the Mathematics exam for each county;
-- PROMOVATI, type Percentage, which represents the percentage of students who passed both exams in each county;
-
-![](images/promovati_judet.png)
-
-Based on the JUDET and PROMOVATI columns, i created a Map Chart that displays the pass rate for each county.
-
-![](images/raspuns4_2.gif)
-
-The next step in my project was to create a new worksheet named _situatie_regiuni_, where i calculated, in the DIFERENTA_PUNCTAJ column, the difference between each student's average grade before and after the appeals process. Based on this differece, i assigned a label to each student in the  DIF column.
-
-![](images/eticheta.png)
-
-Then i assigned each student to the region in which their county of residence is located. 
-
-![](images/regiune.png)
-
-Later, based on the region, i created a slicer for the PivotTable. The corresponding PivotChart shows how many students submitted appeals and how their grades changed after the appeals process, allowing the results to be filtered by region.
-
-![](images/dif_punctaj.png)
-
-![](images/ezgif.com-video-to-gif-converter.gif)
-
-Additionally, i created two more PivotTables with their corresponding PivotCharts. These visualisations show the evolution of the average grade after appeals
-
-![](images/inainte_dupa.png)
-
-![](images/inainte_dupa_grafic.png)
 
 
-and the difference between the final exam grade and the average grade achived during Grades V - VIII, also allowing the results to be filtered by region.
-
-![](images/comparatie_medie.png)
-
-![](images/comparatie_medie_grafic.png)
-
-The _statistica_ worksheet contains descriptive statistics calculated for each Romanian county. For every county, the following indicators were computed:
-- Average (Mean) ;
-- Median;
-- First Quartile (Q1) ;
-- Third Quartile (Q3) ;
-- Standard deviation;
-- Total number of students.
-
-![](images/statistica1.png)
-
-In addition, the students were grouped into grade intervals to analyze the distribution of final results:
-- below 5.00;
-- between 5.00 and 6.99;
-- between 7.00 and 8.99;
-- between 9.00 and 10.00 (inclusive)
-
-![](images/statistica2.png)
-
-These statistics provide a comprehensive overview of student performance across counties and facilitate comparisons of grade distribution and overall achievement levels.
-
-I created a Data Visualisation drop-down list that allows the user to select a county. Based on the selected county, the dashboard automatically updates and displays the corresponding statistics, including a _Box & Whisker chart_ and a _Histogram chart_ showing the distribution of students'final grades.
-
-![](images/statistica_grafic_ezgif.com-video-to-gif-converter.gif)
-
-The _absenteism_ worksheet contains statisitcs for each county regarding the percentage of students who were absent from the national examination. It also includes a breakdown of absent students by area of residence (urban and rural) and by gender (male and female).
-
-![](images/absenti.png)
-
-A _doughnut chart_ was created to visualize these distributions, and it is linked to the same Data Validation drop-down list described earlier, allowing the chart to update dynamically based on the selected county.
-
-![](images/absenti_ezgif.com-video-to-gif-converter.gif)
