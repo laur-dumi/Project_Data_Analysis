@@ -321,6 +321,37 @@ GROUP BY
     counties.county_name
 ORDER BY medie_matematica_inainte DESC;
 ```
+![](images/q1.png)
+
+```sql
+   SELECT
+    county_name,
+    ROUND(nr_elevi_promovati*100.0/nr_elevi_inscrisi,2) AS procent_promovabilitate
+FROM (
+    SELECT 
+        counties.county_name,
+        COUNT(rezultate_en.cod_unic_candidat) AS nr_elevi_inscrisi,
+        COUNT(rezultate_en.cod_unic_candidat) FILTER(
+            WHERE
+            rezultate_en.STATUS_ROMANA = 'PREZENT' AND
+            rezultate_en.STATUS_MATEMATICA = 'PREZENT')
+            AS nr_elevi_prezenti,
+        COUNT(rezultate_en.cod_unic_candidat) FILTER(
+            WHERE
+            rezultate_en.NOTA_FINALA_ROMANA >=5 AND
+            rezultate_en.NOTA_FINALA_MATEMATICA >=5)
+            AS nr_elevi_promovati
+    FROM
+        rezultate_en
+        LEFT JOIN counties ON
+            rezultate_en.cod_judet = counties.county_code
+    GROUP BY 
+        counties.county_name
+)
+ORDER BY procent_promovabilitate; 
+```
+
+![](images/q2.png)
 
 ```sql
   -- Topul judetelor cu cea mai mare rata de absenteism
@@ -348,7 +379,7 @@ FROM (
 ORDER BY 
     procent_absenti DESC;
 ```
-
+![](images/q3.png)
 
 ```sql
   -- Distributia mediilor pe judet
@@ -402,6 +433,7 @@ FROM (
 ORDER BY medii_sub_5 DESC;
 ```
 
+![](images/q4.png)
 
 ```sql
   -- Care este cea mai mare diferenta inregistrata intre media de dinainte si dupa contestatie? Unde a fost inregistrata?
@@ -433,6 +465,7 @@ ORDER BY medii_sub_5 DESC;
         LIMIT 1;
 ```
 
+![](images/q5.png)
 
 ```sql
   -- Diferenta dintre media din gimnaziu si media la examen
@@ -458,6 +491,8 @@ FROM (
 )
 ORDER BY diferenta_medie DESC;
 ```
+
+![](images/q6.png)
 
 ```sql
   /* Care sunt elevii unde s-a inregistrat cea mai mare diferenta dintre media din generala
@@ -487,6 +522,8 @@ ORDER BY diferenta_medie DESC
 LIMIT 10;
 ```
 
+![](images/q7.png)
+
 ```sql
   --Cat % dintre elevi au depus contestatie? Cat % au avut media modificata?
 
@@ -513,6 +550,8 @@ FROM (
     );
 ```
 
+![](images/q8.png)
+
 ```sql
   -- Cat % dintre cei inscrisi au fost absenti? Cat % sunt din mediul rural?
 
@@ -538,3 +577,4 @@ FROM (
         rezultate_en.cod_judet = counties.county_code
     );
 ```
+![](images/q9.png)
