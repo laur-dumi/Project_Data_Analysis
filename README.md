@@ -5,7 +5,7 @@
 - [Cum funcționează?](#cum-funcționează-?)
   - [Primul Dashboard](#primul-dashboard)
   - [Al doilea Dashboard](#al-doilea-dashboard)
-- [De ce am realizat acest proiect?](#de-ce-am-realizat-acest-proiect-?)
+- [De ce am realizat acest proiect](#de-ce-am-realizat-acest-proiect)
 - [Codul SQL](#codul-sql)
   - [Creare baza de date si tabele](#creare-baza-de-date-si-tabele)
   - [Întrebări la care am răspuns](#întrebări-la-care-am-răspuns)
