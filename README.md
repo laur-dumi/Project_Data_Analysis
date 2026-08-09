@@ -616,14 +616,15 @@ am adăugat fiecărui elev regiunea de unde acesta este.
 
 În foaia _%promovati_ am extras primele două caractere din codul SIIIR,
 
-
+![](images/extrage_cod.png)
 
 am atribuit fiecărui elev județul de proveniență
 
+![](images/judet_atribuit.png)
 
 am calculat procentul de promovabilitate pentru fiecare județ, atât la matematica, la română cât și pentru media finală.
 
-
+![](images/procent_prom.png)
 
 În foaia _statistica_ am calulat pentru fiecare județ
 - numărul elevilor, **NR ELEVI**;
@@ -638,3 +639,25 @@ am calculat procentul de promovabilitate pentru fiecare județ, atât la matemat
 - numărul mediilor între 5 și 7, **5<=x<7**;
 - numărul mediilor între 7 și 9, **7<=x<9**;
 - numărul mediilor între 9 și 10 inclusiv, **9<=x<=10**.
+
+![](images/calcul_statistici.png)
+
+
+În foaia _absenteism_ am calculat procentul de absenți pentru fiecare județ, procentul de absenți care provin din mediul rural și procentul de absenți din mediul rural de sex masculin.
+
+
+Am creat următoarele Pivot Tables ale căror Pivot Charts respective le-am folosit în al doilea Dashboard.
+
+![](images/dif_punctaj.png)
+
+Care arată pentru fiecare regiune/județ diferența punctajelor dintre medii înainte și după contestații.
+
+![](images/comparatie_medie.png)
+
+Care afișează pentru fiecare regiune/județ media mediilor de la Evaluarea Națională și media mediilor din gimnaziu.
+
+![](images/inainte_dupa.png)
+
+Care arată pentru fiecare regiune/județ media mediilor la Evaluarea Națională înainte și după contestații.
+
+Fiecare Pivot Table, respectiv Pivot Chart este conectat la un slicer comun care ajută la navigarea pe al foilea Dashboard.
