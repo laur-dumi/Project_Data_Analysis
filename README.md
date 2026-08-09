@@ -9,6 +9,7 @@
 - [Codul SQL](#codul-sql)
   - [Creare baza de date si tabele](#creare-baza-de-date-și-tabele)
   - [Întrebări la care am răspuns](#întrebări-la-care-am-răspuns)
+- [Excel](#excel)
   
 ##  Introducere
 
@@ -588,3 +589,22 @@ FROM (
     );
 ```
 ![](images/q9.png)
+
+## Excel
+
+În foaia _situatie_regiuni_ am calculat media înainte de contestație,
+
+
+diferența punctajului dintre nota înainte de contestație și după contestație,
+
+
+am adăugat fiecărui elev câte o etichetă privind diferența calculată anterior astfel:
+- dacă nu au contestat, eticheta „nu_con”;
+- dacă au contestat, dar nu s-a modificat media, eticheta „nu_mod”;
+- dacă diferența calculată era <0.5 puncte, eticheta „<0.5”;
+- dacă diferența calculată era >=0.5 și <1, eticheta „<1”;
+- dacă diferența calculată era >=1 și <2, eticheta „<2”;
+- dacă diferența calculată era de peste 2 puncte, eticheta „>2”,
+
+
+am adăugat fiecărui elev regiunea de unde acesta este.
