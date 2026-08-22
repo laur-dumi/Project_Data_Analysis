@@ -162,17 +162,14 @@ LIMIT 10;
 
   ```sql
     SELECT
-    county_name AS judet,
+    county_name,
     ROUND(nr_elevi_promovati*100.0/nr_elevi_inscrisi,2) AS procent_promovabilitate
-  FROM (
+    FROM (
     SELECT 
         counties.county_name,
-        COUNT(rezultate_en.cod_unic_candidat) AS nr_elevi_inscrisi,
         COUNT(rezultate_en.cod_unic_candidat) FILTER(
-            WHERE
-            rezultate_en.STATUS_ROMANA = 'PREZENT' AND
-            rezultate_en.STATUS_MATEMATICA = 'PREZENT')
-            AS nr_elevi_prezenti,
+            WHERE rezultate_en.MEDIA >= 0
+        ) AS nr_elevi_inscrisi,
         COUNT(rezultate_en.cod_unic_candidat) FILTER(
             WHERE
             rezultate_en.NOTA_FINALA_ROMANA >=5 AND
@@ -184,9 +181,9 @@ LIMIT 10;
             rezultate_en.cod_judet = counties.county_code
     GROUP BY 
         counties.county_name
-  )
-  ORDER BY procent_promovabilitate DESC
-  LIMIT 10;
+    )
+    ORDER BY procent_promovabilitate;
+    LIMIT 10;
   ```
 
 ![](images/raspuns4_3.png)
@@ -376,7 +373,8 @@ FROM (
             COUNT(rezultate_en.cod_unic_candidat) AS nr_elevi_inscrisi,
             COUNT(rezultate_en.cod_unic_candidat) FILTER(
                 WHERE
-                rezultate_en.STATUS_ROMANA = 'ABSENT')
+                rezultate_en.STATUS_ROMANA = 'ABSENT' OR 
+                rezultate_en.STATUS_MATEMATICA = 'ABSENT')
                 AS nr_elevi_absenti
         FROM
             rezultate_en
