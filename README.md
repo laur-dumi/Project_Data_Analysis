@@ -10,6 +10,7 @@
   - [Creare baza de date si tabele](#creare-baza-de-date-și-tabele)
   - [Întrebări la care am răspuns](#întrebări-la-care-am-răspuns)
 - [Excel](#excel)
+- [Python](#python)
   
 ##  Introducere
 
@@ -19,6 +20,9 @@ Proiectul evidențiază abilitățile mele de analiză a datelor și de utilizar
 
 Ca abordare complementară, am utilizat și SQL pentru a calcula și analiza aceiași indicatori principali, validând astfel rezultatele obținute în Excel.
 
+În urma realizării acestui proiect, inevitabil mi-am pus întrebarea „Dacă vreau să văd aceste statistici și pentru alți ani?”
+În ultima secțiune a prezentării am inclus un cod scris în Python, prin intermediul căruia putem vizualiza informații referitoare la absenteism, promovabilitate, modificări survenite în urma contestațiilor și distribuția mediilor pe fiecare județ.
+
 
   Proiectul demonstrează, de asemenea, capacitatea mea de a:
 
@@ -26,7 +30,8 @@ Ca abordare complementară, am utilizat și SQL pentru a calcula și analiza ace
 - Construi și personaliza tabele Pivot și grafice Pivot;
 - Conecta mai multe tabele Pivot la același slicer pentru filtrare sincronizată;
 - Proiecta dashboard-uri interactive;
-- Utiliza SQL.
+- Utiliza SQL;
+- Utiliza Python.
 
 
 ##  Cum funcționează?
@@ -678,3 +683,232 @@ Care afișează pentru fiecare regiune/județ media mediilor de la Evaluarea Na�
 Care arată pentru fiecare regiune/județ media mediilor la Evaluarea Națională înainte și după contestații.
 
 Fiecare Pivot Table, respectiv Pivot Chart este conectat la un slicer comun care ajută la navigarea pe al foilea Dashboard.
+
+## Python
+
+Pentru realizarea acestei secțiuni a proiectului am utilizat __PostreSQL__, un sistem de management al bazelor de date relaționale, pentru stocarea și gestionarea datelor. Codul Python a fost scris și rulat în __Visual Studio Code__. Fișierele Excel utilizate au fost preluate de pe __https://data.gov.ro/__. Toate fișierele utilizate au aceeași structură, respectând același format, ceea ce a permis procesarea și analiza lor într-un mod unitar.
+Pentru această secțiune, toate exemplele prezentate utilizează date aferente anului 2025 județul Constanța, pentru a păstra coerența și unitatea cu restul proiectului.
+
+Bibliotecile Python utilizate
+
+```python
+# importuri
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+```
+
+Funcția folosită pentru crearea dataframe-ului, curățarea datelor, modificarea - ștergerea - adăgarea coloanelor
+
+```python
+# creare dataframe
+
+def dataFrame (an):
+    # citirea fisierului
+    df = pd.read_excel(f'fisiere\en{an}.xlsx')
+    # cleaning
+    df.columns = df.columns.str.strip()
+    df['COD UNIC CANDIDAT'] = df['COD UNIC CANDIDAT'].astype(str)
+    df['COD SIIIR'] = df['COD SIIIR'].astype(str)
+    df['COD SIIIR'] = df['COD SIIIR'].apply(lambda x: '0' + x if len(x) == 9 else x)
+    df = df[~df['STATUS LIMBA MATERNA'].isin(['PREZENT','ABSENT'])]
+    df = df.drop(columns=['STATUS LIMBA MATERNA', 'NOTA LIMBA MATERNA','CONTESTATIE LIMBA MATERNA','NOTA CONTESTATIE LB MATERNA','NOTA FINALA LB MATERNA'])
+    # creare coloane noi
+    df['COD JUDET'] = df['COD SIIIR'].str[:2] 
+    df['MEDIE INAINTE'] = np.floor(np.round(((df['NOTA ROMANA'] + df['NOTA MATEMATICA'])/2),10)*100)/100
+    # dictionar cod judet: nume judet
+    dict_judet = {
+    '01':'Alba',
+    '02':'Arad',
+    '03':'Arges',
+    '04':'Bacau',
+    '05':'Bihor',
+    '06':'Bistrita Nasaud',
+    '07':'Botosani',
+    '08':'Brasov',
+    '09':'Braila',
+    '10':'Buzau',
+    '11':'Caras Severin',
+    '12':'Cluj',
+    '13':'Constanta',
+    '14':'Covasna',
+    '15':'Dambovita',
+    '16':'Dolj',
+    '17':'Galati',
+    '18':'Gorj',
+    '19':'Harghita',
+    '20':'Hunedoara',
+    '21':'Ialomita',
+    '22':'Iasi',
+    '23':'Ilfov',
+    '24':'Maramures',
+    '25':'Mehedinti',
+    '26':'Mures',
+    '27':'Neamt',
+    '28':'Olt',
+    '29':'Prahova',
+    '30':'Satu Mare',
+    '31':'Salaj',
+    '32':'Sibiu',
+    '33':'Suceava',
+    '34':'Teleorman',
+    '35':'Timis',
+    '36':'Tulcea',
+    '37':'Vaslui',
+    '38':'Valcea',
+    '39':'Vrancea',
+    '40':'Bucuresti',
+    '51':'Calarasi',
+    '52':'Giurgiu'
+}
+    df['NUME JUDET'] = df['COD JUDET'].map(dict_judet)
+    return df
+
+```
+
+Funcția pentru afișarea topului județelor privind rata absenteismului.
+Dacă județul ales nu se află în top 10 atunci funcția va afișa poziția județului în clasament
+
+```python
+
+# top absenti
+
+def topAbsenti(dataframe):
+    nr_inscrisi = dataframe['NUME JUDET'].value_counts()
+    elevi_absenti = dataframe[(dataframe['STATUS ROMANA'] == 'ABSENT') | (dataframe['STATUS MATEMATICA'] == 'ABSENT')]
+    nr_absenti = elevi_absenti['NUME JUDET'].value_counts()
+    absenteism = (nr_absenti*100)/nr_inscrisi
+    lista_judete = absenteism.round(2).sort_values(ascending=False)
+    pozitie = lista_judete.index.get_loc(judet) + 1
+    if pozitie != 1:
+        print(f'Judetul {judet} se afla pe locul al {pozitie}-lea in clasament')
+    else: print(f'Judetul {judet} se afla pe primul loc in clasament')
+    absenteism = absenteism.round(2).sort_values().tail(10)
+    fig, ax = plt.subplots()
+    grafic = ax.barh(absenteism.index,absenteism.values, color='#1E3A8A')
+    ax.set_title(f'Top 10 judete privind rata absenteismului la EN {an}')
+    ax.xaxis.set_visible(False)
+    ax.spines[['right','top','bottom']].set_visible(False)
+    ax.bar_label(grafic, padding=-45, color='white',fmt='%.2f%%', fontweight='bold')
+    plt.show()
+    return fig
+
+```
+
+Funcția pentru afișarea topului județelor privind rata promovabilității.
+Dacă județul ales nu se află în top 10 atunci funcția afișează poziția județului în clasament
+
+```python
+# top promovabilitate
+
+def topPromovabilitate(dataframe):
+    df = dataframe[dataframe['MEDIA'].notna()]
+    df2 = df[(df['NOTA FINALA ROMANA'] >= 5) & (df['NOTA FINALA MATEMATICA'] >=5)]
+    nr_participanti = df['NUME JUDET'].value_counts()
+    nr_promovati = df2['NUME JUDET'].value_counts()
+    promovabilitate = (nr_promovati * 100) / nr_participanti
+    lista_judete = promovabilitate.round(2).sort_values(ascending=False)
+    pozitie = lista_judete.index.get_loc(judet) + 1
+    if pozitie != 1:
+        print(f'Judetul {judet} se afla pe locul al {pozitie}-lea in clasament')
+    else: print(f'Judetul {judet} se afla pe primul loc in clasament')
+    promovabilitate = promovabilitate.round(2).sort_values().tail(10)
+    fig, ax = plt.subplots()
+    grafic = ax.barh(promovabilitate.index,promovabilitate.values, color='#1E3A8A')
+    ax.set_title(f'Top 10 judete privind rata promovabilitatii la EN {an}')
+    ax.xaxis.set_visible(False)
+    ax.spines[['right','top','bottom']].set_visible(False)
+    ax.bar_label(grafic, padding=-45, color='white',fmt='%.2f%%', fontweight='bold')
+    plt.show()
+    return fig
+
+```
+
+Funcția care afișează distribuția mediilor pe județ.
+
+```python
+# distributia mediilor pe judet
+
+def distributiaMediilor(dataframe, judet):
+    df = dataframe[(dataframe['NUME JUDET'] == judet) & (dataframe['MEDIA']>=0)]
+    nr_prezenti = df['COD UNIC CANDIDAT'].count()
+    sub5 = (df[df['MEDIA']<5]['COD UNIC CANDIDAT'].count()*100/nr_prezenti).round(2)
+    intre5_si7 = (df[(df['MEDIA']>=5) & (df['MEDIA']<7)]['COD UNIC CANDIDAT'].count()*100/nr_prezenti).round(2)
+    intre7_si9 = (df[(df['MEDIA']>=7) & (df['MEDIA']<9)]['COD UNIC CANDIDAT'].count()*100/nr_prezenti).round(2)
+    intre9_si10_inclusiv = (df[(df['MEDIA']>=9) & (df['MEDIA']<=10)]['COD UNIC CANDIDAT'].count()*100/nr_prezenti).round(2)
+    fig, ax = plt.subplots()
+    ax.pie([sub5, intre5_si7, intre7_si9, intre9_si10_inclusiv],
+            colors=['#e74c3c', '#f39c12', '#f1c40f', '#2ecc71'],
+            autopct='%.2f%%',
+            textprops={'color': 'white', 'fontweight':'bold'}
+            )
+    ax.legend(['medii sub 5', 'medii intre 5 si 7', 'medii intre 7 si 9', 'medii peste sau egale cu 9'],
+              loc='center left',
+              bbox_to_anchor = (1, 0.5))
+    ax.set_title(f'Distributia mediilor la EN {an} in judetul {judet}\n' f'Numar prezenti: {nr_prezenti}')
+    return fig
+
+```
+
+Funcția care afișează cum s-au modificat mediile elevilor după contestație.
+
+```python
+
+# mdoficari in urma contestatiilor
+
+def modificariContestatii(dataframe, judet):
+    df = dataframe[(dataframe['MEDIA']>=0) & (dataframe['NUME JUDET'] == judet)]
+    nr_prezenti = df['COD UNIC CANDIDAT'].count()
+    df2 = df[(df['CONTESTATIE ROMANA'] == 'DA') | (df['CONTESTATIE MATEMATICA'] == 'DA')]
+    nr_contestatii = df2['COD UNIC CANDIDAT'].count()
+    df2['DIFERENTA MEDIE'] = abs(df2['MEDIA'] - df2['MEDIE INAINTE'])
+    nu_mod, dif_mica, dif_medie, dif_mare = 0, 0, 0, 0
+    for each in df2['DIFERENTA MEDIE']:
+        if each == 0:
+            nu_mod +=1
+        if each >0 and each <=0.50:
+            dif_mica +=1
+        if each > 0.50 and each <= 1:
+            dif_medie +=1
+        if each > 1:
+            dif_mare +=1
+    mod = nr_contestatii - nu_mod
+    fig, ax = plt.subplots()
+    grafic = ax.bar(['nr medii\n nemodificate', 'diferenta\n sub 0.5p', 'diferenta intre\n 0.5p si 1p ', 'diferenta\n peste 1p'], [nu_mod,dif_mica, dif_medie, dif_mare], color='#1E3A8A')
+    ax.set_title(f'Modificarile in urma contestatiilor la EN {an} in judetul {judet}\n' f'Numar contestatii inregistrate: {nr_contestatii}')
+    ax.yaxis.set_visible(False)
+    ax.bar_label(grafic, fontweight='bold', color='black' )
+    ax.spines[['top', 'right', 'left']].set_visible(False)
+    return fig
+
+```
+
+Funcția care afișează o histogramă cu distribuția mediilor pe județ și indicatorii statistici: media, mediana și quartilele 1 respectiv 3.
+
+```python
+
+# indicatori statistici
+
+def indicatoriStatistica(dataframe, judet):
+    df = dataframe[(dataframe['NUME JUDET'] == judet) & (dataframe['MEDIA'] >= 0)]
+    media = df['MEDIA'].mean()
+    mediana = df['MEDIA'].median()
+    q1 = df['MEDIA'].quantile(0.25)
+    q3 = df['MEDIA'].quantile(0.75)
+    xbins = np.arange(1,12,1)
+    fig, ax = plt.subplots()
+    ax.hist(df['MEDIA'], bins=xbins, color='#1E3A8A')
+    ax.axvline(media, linestyle='--', color='red', label=f'Media: {media: .2f}', linewidth=3)
+    ax.axvline(mediana, linestyle='--', color='green', label=f'Mediana: {mediana: .2f}', linewidth=3)
+    ax.axvline(q1, linestyle='--', color='black', label=f'Q1: {q1: .2f}', linewidth=3)
+    ax.axvline(q3, linestyle='--', color='black', label=f'Q3:{q3: .2f}', linewidth=3)
+    ax.set_xticks(range(1,11))
+    ax.spines[['left','right','top']].set_visible(False)
+    ax.set_title(f'Distributia mediilor la EN{an} pentru judetul {judet}')
+    ax.legend(loc='center left', bbox_to_anchor = (1, 0.75))
+
+    return fig
+
+```
