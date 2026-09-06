@@ -797,6 +797,9 @@ def topAbsenti(dataframe):
 
 ```
 
+![](images/py_top_abs.png)
+
+
 Funcția pentru afișarea topului județelor privind rata promovabilității.
 Dacă județul ales nu se află în top 10 atunci funcția afișează poziția județului în clasament
 
@@ -826,6 +829,8 @@ def topPromovabilitate(dataframe):
 
 ```
 
+![](images/py_top_promov.png)
+
 Funcția care afișează distribuția mediilor pe județ.
 
 ```python
@@ -851,6 +856,8 @@ def distributiaMediilor(dataframe, judet):
     return fig
 
 ```
+
+![](images/py_distrib_medii.png)
 
 Funcția care afișează cum s-au modificat mediile elevilor după contestație.
 
@@ -885,6 +892,8 @@ def modificariContestatii(dataframe, judet):
 
 ```
 
+![](images/py_mod_medii.png)
+
 Funcția care afișează o histogramă cu distribuția mediilor pe județ și indicatorii statistici: media, mediana și quartilele 1 respectiv 3.
 
 ```python
@@ -912,3 +921,6 @@ def indicatoriStatistica(dataframe, judet):
     return fig
 
 ```
+
+![](images/py_indicatori_st.png)
+
